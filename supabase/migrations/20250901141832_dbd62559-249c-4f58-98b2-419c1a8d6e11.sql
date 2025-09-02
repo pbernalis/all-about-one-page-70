@@ -1,0 +1,22 @@
+-- Add unique constraint to memberships if not already present
+ALTER TABLE memberships ADD CONSTRAINT IF NOT EXISTS uniq_membership UNIQUE (user_id, site_id);
+
+-- Create preview_tokens table
+CREATE TABLE IF NOT EXISTS preview_tokens (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  site_id uuid NOT NULL REFERENCES sites(id) ON DELETE CASCADE,
+  page_id uuid REFERENCES pages(id) ON DELETE CASCADE,
+  token text NOT NULL UNIQUE,
+  expires_at timestamptz NOT NULL
+);
+
+-- Enable RLS on preview_tokens
+ALTER TABLE preview_tokens ENABLE ROW LEVEL SECURITY;
+
+-- No direct reads from client (edge function only)
+DROP POLICY IF EXISTS preview_tokens_read ON preview_tokens;
+CREATE POLICY preview_tokens_read ON preview_tokens
+FOR SELECT USING (false);
+
+-- Create index for token lookups
+CREATE INDEX IF NOT EXISTS preview_tokens_token_idx ON preview_tokens(token);

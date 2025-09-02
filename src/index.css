@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Canvas CMS Design System - Modern 2025 Edition */
+
+@layer base {
+  :root {
+    /* Core Canvas CMS Brand Colors - Enhanced */
+    --background: 0 0% 100%;
+    --foreground: 220 14% 8%;
+
+    /* Canvas Area - Modern Glass Effect */
+    --canvas: 0 0% 99%;
+    --canvas-foreground: 220 14% 8%;
+
+    /* Sidebar - Deep Professional */
+    --sidebar: 220 10% 98%;
+    --sidebar-foreground: 220 14% 8%;
+    --sidebar-bg: 220 30% 8%;
+
+    /* Cards & Panels - Enhanced Contrast */
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 8%;
+
+    /* Brand Colors - Modern Gradient System */
+    --primary: 217 91% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 217 91% 70%;
+    --primary-soft: 217 91% 95%;
+
+    /* Modern Gradients - 2025 Style */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 55%), hsl(261 100% 65%));
+    --gradient-canvas: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(217 91% 98%) 50%, hsl(0 0% 99%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(220 30% 8%) 0%, hsl(220 35% 6%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    --gradient-mesh: radial-gradient(circle at 25% 25%, hsl(217 91% 55% / 0.1) 0%, transparent 50%), 
+                     radial-gradient(circle at 75% 75%, hsl(261 100% 65% / 0.1) 0%, transparent 50%);
+
+    /* Interactive States - Enhanced */
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 14% 8%;
+
+    --muted: 220 20% 97%;
+    --muted-foreground: 220 12% 45%;
+
+    --accent: 217 91% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success & Warning States */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive Actions */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs - Modern */
+    --border: 220 20% 90%;
+    --input: 220 20% 95%;
+    --ring: 217 91% 55%;
+
+    /* Design Properties - Modern Radius */
+    --radius: 0.875rem;
+
+    /* Modern Shadows - Enhanced Depth */
+    --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-strong: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 0 1px hsl(217 91% 55% / 0.05), 0 4px 16px hsl(217 91% 55% / 0.15);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+
+    /* Modern Animations - Micro-interactions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Theme Variables - Dynamically set by ThemeProvider */
+    --theme-primary: 261 100% 70%;
+    --theme-primary-light: 261 100% 80%;
+    --theme-primary-dark: 261 100% 60%;
+    --theme-primary-hex: #6D28D9;
+    --theme-radius: 12px;
+    --theme-spacing-base: 0.5rem;
+    --theme-spacing-content: 1rem;
+    --theme-spacing-section: 2rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Sidebar dark mode */
+    --sidebar: 222.2 84% 4.9%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "kern" 1;
+  }
+}
+
+@layer components {
+  /* Modern Glass Morphism Effects */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Modern Button Variants */
+  .btn-modern {
+    @apply relative overflow-hidden transition-all duration-200;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-modern:hover {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .btn-modern:active {
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Modern Card Styles */
+  .card-modern {
+    @apply bg-card border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+
+  .card-modern:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  /* Modern Focus States - Enhanced */
+  .focus-modern {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-2;
+    @apply focus-visible:shadow-glow;
+  }
+
+  /* Enhanced focus ring for inputs */
+  input:focus-visible, textarea:focus-visible {
+    @apply ring-2 ring-primary/30 ring-offset-2;
+    outline: none;
+  }
+
+  /* Smooth Hover Animations */
+  .hover-lift {
+    @apply transition-all duration-200;
+    @apply hover:-translate-y-0.5 hover:shadow-medium;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+    @apply hover:shadow-glow;
+  }
+
+  /* Modern Scrollbars */
+  .scrollbar-modern {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-modern::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-modern::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-modern::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-modern::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+
+  /* TipTap tooltip styling */
+  .tippy-box {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Inline editing visual hints - only show when inline editing is active */
+  [data-editable="true"][data-inline-on="true"] {
+    outline: 1px dashed color-mix(in srgb, hsl(var(--primary)) 40%, transparent);
+    outline-offset: 2px;
+    transition: outline-color 0.2s ease;
+  }
+  
+  [data-editable="true"][data-inline-on="true"]:focus {
+    outline-color: color-mix(in srgb, hsl(var(--primary)) 60%, transparent);
+  }
+}
