@@ -12,7 +12,9 @@ const ALLOWLIST = [
   /^\/seo(\/.*)?$/,                                  // /seo/*
   /^\/nav\/items(\/\d+)?(\/(label|href))?$/,         // /nav/items/* (+fields)
   /^\/translations(\/[^/]+)+$/,                      // /translations/*
-  /^\/content\/[^/]+\/images(\/\d+)?(\/(src|alt))?$/ // /content/*/images/*
+  /^\/content\/[^/]+\/images(\/\d+)?(\/(src|alt))?$/, // /content/*/images/*
+  /^\/ui(\/.*)?$/,                                   // /ui/* for UI updates
+  /^\/meta(\/.*)?$/                                  // /meta/* for metadata
 ];
 
 const MAX_OPS = 40;
